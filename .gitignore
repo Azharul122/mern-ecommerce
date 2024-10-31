@@ -1,0 +1,47 @@
+
+# Ignore .env files in both client and server directories
+/client/.env
+/server/.env
+
+# Ignore node_modules
+/client/node_modules
+/server/node_modules
+
+# Logs
+/client/*.log
+/client/logs
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
+/client/pnpm-debug.log*
+/client/lerna-debug.log*
+
+# Client build artifacts
+/client/dist
+/client/dist-ssr
+/client/*.local
+
+# Server build artifacts
+/server/dist
+/server/build
+
+# Editor directories and files
+/client/.vscode/*
+/client/!.vscode/extensions.json
+/client/.idea
+/client/.DS_Store
+/client/*.suo
+/client/*.ntvs*
+/client/*.njsproj
+/client/*.sln
+/client/*.sw?
+
+# System files
+*.log
+.DS_Store
+.npmrc
+
+# Additional environment configuration
+/client/.env.local
+/server/.env.local
+
