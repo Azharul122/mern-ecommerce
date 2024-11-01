@@ -14,6 +14,12 @@ import ManageProducts from './components/Dashboard/admin/ManageProducts.tsx';
 import ManagrLayout from './components/Dashboard/Manager/ManagrLayout.tsx';
 import ManagerHome from './components/Dashboard/Manager/ManagerHome.tsx';
 import CreateProduct from './components/Dashboard/Manager/CreateProduct.tsx';
+import { Provider } from 'react-redux';
+import store from './store/store.ts';
+import { Toaster } from 'sonner';
+import AuthLogin from './components/Home/auth/login.tsx';
+import AuthRegister from './components/Home/auth/register.tsx';
+
 
 
 
@@ -26,7 +32,16 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
+     
     ],
+  },
+  {
+    path:"/login",
+    element:<AuthLogin/>
+  },
+  {
+    path:"/register",
+    element:<AuthRegister/>
   },
   {
     path: "/dashboard",
@@ -68,9 +83,13 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <Provider store={store}>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <RouterProvider router={router}>
+
       </RouterProvider>
+      <Toaster/>
     </ThemeProvider>
+    </Provider>
   </React.StrictMode>,
 )
